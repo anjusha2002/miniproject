@@ -10,9 +10,9 @@ if(isset($_POST["btn_submit"]))
 	    
 		$stockQ=$_POST["txt_stock"];
 		$stockM=$_POST["txt_mfgdate"];
-		$stockE=$_POST["txt_mfgdate"];
-		$insQry="insert into tbl_stock(product_id,stock_quantity,mfg_date,exp_date,stock_date)
-		values('".$_GET["add"]."','$stockQ','$stockM','$stockE','curdate()')";
+		$stockE=$_POST["txt_expdate"];
+		$insQry="insert into tbl_stock(product_id,stock_quantity,mfg_date,exp_date)
+		values('".$_GET["add"]."','$stockQ','$stockM','$stockE')";
 		
 		 if($conn->query($insQry))
 	 		{
@@ -35,6 +35,33 @@ if(isset($_POST["btn_submit"]))
 	 }
 }
 ?>
+<?php
+if(isset($_GET["did"]))
+ {
+	 $delQry="delete from tbl_stock where stock_id='".$_GET["did"]."'";
+	 
+	 if($conn->query($delQry))
+	 {
+ ?>
+		 <script>
+		 		alert("data deleted");
+				window.location="AddStock.php";
+		</script>
+ <?php
+	 }
+	 else
+	 {
+?>
+		 <script>
+		 		alert("deletion failed");
+				window.location="AddStock.php";
+		</script>
+ <?php
+	 }
+ }
+	
+ ?>
+ 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -104,11 +131,11 @@ if(isset($_POST["btn_submit"]))
         
         <td><a href="AddStock.php?did=<?php echo $data["stock_id"]?>"><i class='fas fa-trash' style='font-size:24px;color:red'></i></a></td> 
      </tr>
-     </table>
-     
-     
 	 <?php
 	}
+  ?>
+  </table>
+  <?php
 	include("Foot.php");
 ob_flush();
  

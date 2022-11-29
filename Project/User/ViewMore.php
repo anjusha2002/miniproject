@@ -15,7 +15,7 @@ include("../Assets/Connection/Connection.php");
   
   
 $selQry="select * from tbl_product p inner join tbl_category c on p.category_id=c.category_id inner join tbl_quantity q on p.quantity_id
-		=q.quantity_id where p.product_id='".$_GET["pid"]."'";	
+		=q.quantity_id inner join tbl_stock s on s.product_id = p.product_id  where p.product_id='".$_GET["pid"]."'";	
 		$row=$conn->query($selQry);
 		if($data=$row->fetch_assoc())
 		{
@@ -47,7 +47,7 @@ include("Head.php");
     </tr>
      <tr>
       <td>Stock</td>
-      <td><?php echo $data["product_stock"]?></td>
+      <td><?php echo $data["stock_quantity"]?></td>
     </tr>
     <tr>
       <td>Photo</td>

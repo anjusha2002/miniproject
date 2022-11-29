@@ -19,7 +19,7 @@ include("../Assets/Connection/connection.php");
                 bottom: 0;
                 right: 0;
                 left: auto;
-            }
+            }   
 
             .success {
                 color: #3c763d;
@@ -103,7 +103,11 @@ include("../Assets/Connection/connection.php");
                     <div class="row" id="result">
 
                         <?php
-                            $selProduct = "SELECT * from tbl_product e inner join tbl_category t on t.category_id=e.category_id inner join tbl_quantity q on e.quantity_id=q.quantity_id";                             
+                            $selProduct = "SELECT * from tbl_product e 
+                            inner join tbl_category t on t.category_id=e.category_id 
+                            inner join tbl_quantity q on e.quantity_id=q.quantity_id
+                            inner join tbl_stock s on s.product_id = e.product_id
+                            WHERE exp_date > curdate()";                             
 							$result1 = $conn->query($selProduct);
                             while ($row1=$result1->fetch_assoc()) {
 								$average_rating = 0;
@@ -180,7 +184,7 @@ else
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title text-danger" align="center">
-                                            Price : <?php echo $row1["product_wholesaleprice"]; ?>/-
+                                            Price : <?php echo $row1["product_mrp"]; ?>/-
                                         </h4>
                                         <p align="center">
                                         <?php echo $average_rating."/5"; ?><br />
@@ -189,12 +193,12 @@ else
                                         </p>
                                         <?php
                                             
-                                                if ($row1["product_stock"] > 0) {
+                                                if ($row1["stock_quantity"] > 0 ) {
                                         ?>
                                         <a href="javascript:void(0)" onclick="addCart('<?php echo $row1["product_id"]; ?>')" class="btn btn-success btn-block">Add to Cart</a>
-                                         <a href="ViewMore.php?pid=<?php echo $row1["product_id"]?>">ViewMore</a>
+                                        <a href="ViewMore.php?pid=<?php echo $row1["product_id"]?>">ViewMore</a>
                                         <?php
-                                        } else if ($row1["product_stock"] == 0) {
+                                        } else if ($row1["stock_quantity"] == 0) {
                                         ?>
                                         <a href="javascript:void(0)" class="btn btn-danger btn-block">Out of Stock</a>
                                         <?php
@@ -229,7 +233,7 @@ else
             function addCart(id)
             {
                 $.ajax({
-                    url: "../Assets/AjaxPages/AjaxAddCartShop.php?id=" + id,
+                    url: "../Assets/AjaxPages/AjaxAddCart.php?id=" + id,
                     success: function(response) {
                         if (response.trim() === "Added to Cart")
                         {

@@ -423,9 +423,11 @@ include("../Assets/Connection/Connection.php");
 
         /* Assign actions */
         $(".product-quantity input").change(function() {
+			//alert(this.value);
             $.ajax({
-                url: "../Assets/AjaxPages/AjaxCartShop.php?action=Update&id=" + this.alt + "&qty=" + this.value
+                url: "../Assets/AjaxPages/AjaxCart.php?action=Update&id=" + this.alt + "&qty=" + this.value
             });
+			
             updateQuantity(this);
 
         });
@@ -433,7 +435,7 @@ include("../Assets/Connection/Connection.php");
         $(".product-removal button").click(function() {
 
             $.ajax({
-                url: "../Assets/AjaxPages/AjaxCartShop.php?action=Delete&id=" + this.value
+                url: "../Assets/AjaxPages/AjaxCart.php?action=Delete&id=" + this.value
             });
             removeItem(this);
         });

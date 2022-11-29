@@ -49,6 +49,7 @@ include("Head.php");
             
             <td><img src="..//Assets/Files/ProductPhoto/<?php echo $data["product_photo"];?>" width="120" height="120"/></td>
             <td><a href="AddStock.php?add=<?php echo $data["product_id"]?>">AddStock</a></td> 
+            <td><a href="ProductRating.php?pid=<?php echo $data["product_id"]?>">ViewRating</a></td>
        
            
 		</tr>

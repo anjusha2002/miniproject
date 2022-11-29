@@ -3,7 +3,8 @@ include("../Connection/Connection.php");
 
     if (isset($_GET["action"])) {
 
-        $sqlQry = "SELECT * from tbl_product p inner join tbl_quantity sc on sc.quantity_id=p.quantity_id inner join tbl_category c on c.category_id=p.category_id where true ";
+        $sqlQry = "SELECT * from tbl_product p inner join tbl_quantity sc on sc.quantity_id=p.quantity_id inner join tbl_category c on c.category_id=p.category_id inner join tbl_stock s on s.product_id = p.product_id
+        WHERE exp_date > curdate()";
         $row = "SELECT count(*) as count from tbl_product p inner join tbl_quantity sc on sc.quantity_id=p.quantity_id inner join tbl_category c on c.category_id=p.category_id where true ";
 
         if ($_GET["category"]!=null) {
@@ -21,7 +22,7 @@ include("../Connection/Connection.php");
             $row = $row." AND sc.quantity_id IN(".$subcategory.")";
         }
 
-
+        //echo $sqlQry;
         $resultS = $conn->query($sqlQry);
         $resultR = $conn->query($row);
         
@@ -112,11 +113,12 @@ else
                                         </p>
                                         <?php
                                             
-                                                if ($row1["product_stock"] > 0) {
+                                                if ($row1["stock_quantity"] > 0) {
                                         ?>
                                         <a href="javascript:void(0)" onclick="addCart('<?php echo $row1["product_id"]; ?>')" class="btn btn-success btn-block">Add to Cart</a>
+                                        <a href="ViewMore.php?pid=<?php echo $row1["product_id"]?>">ViewMore</a>
                                         <?php
-                                        } else if ($row1["product_stock"] == 0) {
+                                        } else if ($row1["stock_quantity"] == 0) {
                                         ?>
                                         <a href="javascript:void(0)" class="btn btn-danger btn-block">Out of Stock</a>
                                         <?php
