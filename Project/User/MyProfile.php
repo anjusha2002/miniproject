@@ -15,6 +15,12 @@
 </head>
 
 <body>
+<style>
+tr, td {
+  text-align: left;
+  padding: 9px;
+}
+</style>
 <?php
 session_start();
 include("../Assets/Connection/Connection.php");
@@ -35,28 +41,28 @@ include("Head.php");
     <td colspan="2"><img src="../Assets/Files/UserPhoto/<?php echo $data["photo"];?>" width="150" height="150"/></td>
   </tr>
   <tr>
-    <td><b>Name</td>
-    <td>:<?php echo $data["user_name"]?></td>
+    <td><b></td>
+    <td><?php echo $data["user_name"]?></td>
   </tr>
   <tr>
-    <td><b>Contact</td>
-    <td>:<?php echo $data["user_contact"]?></td>
+    <td><b></td>
+    <td><?php echo $data["user_contact"]?></td>
   </tr>
   <tr>
-    <td><b>Email</td>
-    <td>:<?php echo $data["user_email"]?></td>
+    <td><b></td>
+    <td><?php echo $data["user_email"]?></td>
   </tr>
   <tr>
-    <td><b>Address</td>
-    <td>:<?php echo $data["user_address"]?></td>
+    <td><b></td>
+    <td><?php echo $data["user_address"]?></td>
   </tr>
   <tr>
-    <td><b>Place</td>
-    <td>:<?php echo $data["place_name"]?></td>
+    <td><b></td>
+    <td><?php echo $data["place_name"]?></td>
   </tr>
   <tr>
-    <td><b>District</td>
-    <td>:<?php echo $data["district_name"]?></td>
+    <td><b></td>
+    <td><?php echo $data["district_name"]?></td>
   </tr>
 </table>
 <?php

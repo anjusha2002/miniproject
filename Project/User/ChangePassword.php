@@ -81,8 +81,8 @@ include("Head.php");
       <input type="text" name="txt_con" id="txt_con" required="required" autocomplete="off" /></td>
     </tr>
     <tr>
-      <td colspan="2"><input type="submit" name="btnsave" id="btnsave" value="Change" />
-      <input type="submit" name="btnc" id="btnc" value="Cancel" /></td>
+      <td colspan="2"><input type="submit" name="btnsave" style="background-color:#2D9B43" id="btnsave" value="Change" />
+      <input type="submit" name="btnc" id="btnc" style="background-color:#2D9B43" value="Cancel" /></td>
     </tr>
   </table>
 </form>

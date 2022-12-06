@@ -43,16 +43,18 @@ if(isset($_POST["btn_update"]))
 include("Head.php");
 ?>
 <form id="form1" name="form1" method="post" action="">
-  <table width="200" border="1" align="center">
+  <table width="200"  align="center" cellpadding="10">
   <p><a href="HomePage.php"> Home</a></p>
-  
+  <tr>
+     <td colspan="2"><img src="../Assets/Files/ShopPhoto/<?php echo $data["shop_photo"];?>" width="150" height="150"/></td>
+  </tr>
     <tr>
-      <td>Name</td>
+      <td>*Name</td>
       <td> <label for="text_name"></label>
      <td><input type="text" id="txt_name" name="txt_name" value="<?php echo $data["shop_name"]?>"/></td>
     </tr>
     <tr>
-      <td>Email</td>
+      <td>*Email</td>
       <td> <label for="text_email"></label>
       <td><input type="text" id="txt_email" name="txt_email" value="<?php echo $data["shop_email"]?>"/></td>
     </tr>
@@ -62,8 +64,8 @@ include("Head.php");
       <td><input type="text" id="txt_address" name="txt_address" value="<?php echo $data["shop_address"]?>"/></td>
     </tr>
     <tr>
-      <td colspan="2" align="center"><input type="submit" name="btn_update" id="btn_update" value="update" /></td>
-      <td><input type="reset" name="btn_cancel" id="btn_cancel" value="cancel" /></td>
+      <td colspan="2" align="center"><input type="submit" style="background-color:#04AA6D" name="btn_update" id="btn_update" value="update" /></td>
+      <td><input type="reset" name="btn_cancel" style="background-color:#04AA6D" id="btn_cancel" value="cancel" /></td>
     </tr>
   </table>
 </form>

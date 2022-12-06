@@ -65,7 +65,7 @@ include("Head.php");
 
 
 <form id="form1" name="form1" method="post" action="">
-  <table  border="1" cellpadding="10" align="center">
+  <table  border="0" cellpadding="10" align="center">
     <tr>
       <td>Current Password</td>
       <td><label for="txt_cur"></label>
@@ -82,8 +82,8 @@ include("Head.php");
       <input type="text" name="txt_con" id="txt_con" required="required" autocomplete="off" /></td>
     </tr>
     <tr>
-      <td colspan="2"><input type="submit" name="btnsave" id="btnsave" value="Change" />
-      <input type="submit" name="btnc" id="btnc" value="Cancel" /></td>
+      <td colspan="2"><input type="submit" name="btnsave" style="background-color:#04AA6D" id="btnsave" value="Change" />
+      <input type="submit" name="btnc" style="background-color:#04AA6D" id="btnc" value="Cancel" /></td>
     </tr>
   </table>
 </form>

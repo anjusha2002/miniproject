@@ -78,6 +78,20 @@ include("../Assets/Connection/Connection.php");
 	}
    ?>
 
+
+<style>
+tr, td {
+  text-align: left;
+  padding: 9px;
+}
+tr:nth-child(even) {background-color:#A7A7A7;}
+
+</style>
+
+
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -89,43 +103,44 @@ include("../Assets/Connection/Connection.php");
 
 <form action="" method="post" enctype="multipart/form-data" name="form2" id="form2">
 <br /><br /><br /><br />
-<h1 align="center">Register</h1>
-    <p  align="center">Please fill in this form to create an account.</p>
+<h1 align="center" style="color:#00F">Register as User</h1><br />
+    <p  align="center">Fill the form below.</p>
+    
+    
+    
+    
   <table width="200" border="0" align="center">
     <tr>
-      <td>Name</td>
+      <td></td>
       <td><label for="txt_name"></label>
      
-      <input type="text" name="txt_name" id="txt_name"  required/></td>
+      <input type="text" name="txt_name" id="txt_name" placeholder="*Enter your Name" required/></td>
     </tr>
     <tr>
-      <td>Gender</td>
-      <td><input type="radio" name="txt_gender" id="btn_gender" value="male" checked="checked"/>
-      Male
-        <input type="radio" name="txt_gender" id="btn_gender2" value="female" />
-      <label for="btn_gender2"></label>        <label for="btn_gender">Female</label></td>
+      <td>*Gender</td>
+      <td><input type="radio" name="txt_gender" id="btn_gender" value="male" checked="checked"/> Male
+        <input type="radio" name="txt_gender" id="btn_gender2" value="female" />Female
+        <input type="radio" name="txt_gender" id="btn_gender3" value="others" />Others
+        
+      <label for="btn_gender3"></label><label for="btn_gender2"></label> <label for="btn_gender"></label></td>
     </tr>
     <tr>
-      <td>Contact</td>
+      <td></td>
       <td><label for="txt_contact"></label>
-      <input type="text" name="txt_contact" id="txt_contact" reqired pattern="([0-9]{10,10})"/></td>
+      <input type="text" name="txt_contact" id="txt_contact" reqired pattern="([0-9]{10,10})" placeholder="*1234567890"/></td>
     </tr>
     <tr>
-      <td>Email</td>
+      <td></td>
       <td><label for="txt_email"></label>
-      <input type="text" name="txt_email" id="txt_email" required autocomplete="off" onChange="emailval(this),CheckEmail(this.value)" />
+      <input type="text" name="txt_email" id="txt_email" placeholder="*E-mail Address" required autocomplete="off" onChange="emailval(this),CheckEmail(this.value)" />
       <span id="content"></span><small id="em"></small></td>
     </tr>
-    <tr>
-      <td>Username</td>
-      <td><label for="txt_username"></label>
-      <input type="text" name="txt_username" id="txt_username" /></td>
-    </tr>
     
-      <td>District</td>
-      <td><select name="ddl_district" id="ddl_district" onChange="getPlace(this.value)">
+    
+      <td></td>
+      <td><select name="ddl_district"  id="ddl_district"  onChange="getPlace(this.value)">
       
-      <option value="">---select---</option>
+      <option value="">---*select District---</option>
       <?php
       $selQry="select * from tbl_district";
 	  $row=$conn->query($selQry);
@@ -149,11 +164,11 @@ include("../Assets/Connection/Connection.php");
      
     </tr>
     <tr>
-      <td height="47">Place</td>
+      <td height="47"></td>
       <td><select name="ddl_place" id="ddl_place" >
       
      
-      <option value="">---select---</option>
+      <option value="">---*select Place---</option>
     
             
 	  
@@ -165,36 +180,36 @@ include("../Assets/Connection/Connection.php");
 
     </tr>
     <tr>
-      <td height="47">Photo</td>
-      <td><input type="file" name="photo" id="photo" /></td>
+      <td height="47"></td>
+      <td><input type="file" name="photo" id="photo" required="required" placeholder="*Upload your photo here" /></td>
     
     </tr>
     
     <tr>
-      <td>Password</td>
+      <td></td>
       <td><label for="txt_password"></label>
-      <input type="password" name="txt_password" id="txt_password" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"   />
+      <input type="password" name="txt_password" placeholder="*Password" id="txt_password" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"   />
       <span id="pass"></span></td>
       <tr>
-      <td>Confirm Password</td>
+      <td></td>
       <td><label for="txt_password"></label>
-      <input type="password" name="txt_cpassword" id="txt_cpassword" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  onchange="chkpwd(this,txt_password)" />
+      <input type="password" name="txt_cpassword" placeholder="*Confirm Password" id="txt_cpassword" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  onchange="chkpwd(this,txt_password)" />
       <span id="pass"></span></td>
       </tr>
     
     
     <tr>
-      <td>Address</td>
+      <td></td>
       <td><label for="txtarea_address"></label>
-      <textarea name="txt_address" id="txt_address" cols="45" rows="5" required ></textarea></td>
+      <textarea name="txt_address" id="txt_address" placeholder="Enter address here" cols="45" rows="5" required ></textarea></td>
     </tr>
     <tr>
-      <td colspan="2" align="center"><input type="submit" name="btn_submit" id="btn_submit" value="submit" />
+      <td colspan="2" align="center" ><input type="submit" name="btn_submit" id="btn_submit" value="submit" />
       <label for="btn_submit">
         <input type="reset" name="btn_cancel" id="btn_cancel" value="cancel" />
       </label></td>
     </tr>
-     <p align="center"> Already have an account? <a href="Login.php">Sign in</a></p>
+     <p align="center"> Already have an account? <a href="Login.php">Sign in</a></p></br>
   </table>
 </form>
 </body>

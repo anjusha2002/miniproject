@@ -47,9 +47,7 @@ include("Assets/Connection/connection.php");
                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                      <div class="full">
                         <div class="center-desk">
-                           <div class="logo">
-                              <a href="Assets/Temp/Main/index.html"><img src="Assets/Temp/Main/images/logo.png" alt="#" /></a>
-                           </div>
+                           
                         </div>
                      </div>
                   </div>
@@ -113,9 +111,7 @@ include("Assets/Connection/connection.php");
                               <div class="carousel-caption ">
                                  <div class="row">
                                     <div class="col-md-12">
-                                       <div class="banner_img">
-                                        <!-- <figure><img src="Assets/Temp/Main/images/banner_img.png" alt="#"/></figure>-->
-                                       </div>
+                                       
                                     </div>
                                  </div>
                               </div>
@@ -126,9 +122,7 @@ include("Assets/Connection/connection.php");
                               <div class="carousel-caption">
                                  <div class="row">
                                     <div class="col-md-12">
-                                       <div class="banner_img">
-                                         <!-- <figure><img src="Assets/Temp/Main/images/banner_img.png" alt="#"/></figure>-->
-                                       </div>
+                                       
                                     </div>
                                  </div>
                               </div>

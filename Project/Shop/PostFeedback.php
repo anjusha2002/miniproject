@@ -49,14 +49,14 @@ include("Head.php");
 
 <form id="form1" name="form1" method="post" action="">
 <center>
-  <table width="200" border="1">
+  <table width="200" >
     <tr>
       <td>Feedback</td>
       <td><textarea name="txt_feedbackdetails" id="txt_feedbackdetails" cols="45" rows="5"></textarea></td>
     </tr>
     <tr>
-      <td colspan="2" align="center"><input type="submit" name="btn_submit" id="btn_submit" value="Send" />
-        <input type="submit" name="btn_cancel" id="btn_cancel" value="Cancel" /></td>
+      <td colspan="2" align="center"><input type="submit" name="btn_submit" style="background-color:#04AA6D" id="btn_submit" value="Send" />
+        <input type="submit" name="btn_cancel" style="background-color:#04AA6D" id="btn_cancel" value="Cancel" /></td>
       </tr>
   </table>
   </center>

@@ -51,7 +51,7 @@
 
         <!-- sidebar  -->
         <!-- sidebar part here -->
-        <nav class="sidebar">
+        <nav class="sidebar" style="background-color:#4C4C4C">
             <div class="logo d-flex justify-content-between">
                 <a href="HomePage.php"><h2 align="center">Welcome<br><?php echo $_SESSION["username"]?></h2></a>
                 <div class="sidebar_close_icon d-lg-none">

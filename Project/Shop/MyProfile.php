@@ -30,34 +30,34 @@ $selQry="select * from tbl_shop u inner join tbl_place p on u.place_id=p.place_i
 	ob_start();
 include("Head.php");
 ?>
-<table width="200" border="0" align="center">
+<table width="200" border="0" align="center" cellpadding="10">
   <tr>
      <td colspan="2"><img src="../Assets/Files/ShopPhoto/<?php echo $data["shop_photo"];?>" width="150" height="150"/></td>
   </tr>
   
   <tr>
-    <td><b>ShopName</td>
-    <td>:<?php echo $data["shop_name"]?></td>
+    <td></td>
+    <td><?php echo $data["shop_name"]?></td>
   </tr>
   <tr>
-    <td><b>ShopContact</td>
-    <td>:<?php echo $data["shop_contact"]?></td>
+    <td></td>
+    <td><?php echo $data["shop_contact"]?></td>
   </tr>
   <tr>
-    <td><b>ShopEmail</td>
-    <td>:<?php echo $data["shop_email"]?></td>
+    <td></td>
+    <td><?php echo $data["shop_email"]?></td>
   </tr>
   <tr>
-    <td><b>ShopAddress</td>
-    <td>:<?php echo $data["shop_address"]?></td>
+    <td></td>
+    <td><?php echo $data["shop_address"]?></td>
   </tr>
   <tr>
-    <td><b>Place</td>
-    <td>:<?php echo $data["place_name"]?></td>
+    <td></td>
+    <td><?php echo $data["place_name"]?></td>
   </tr>
   <tr>
-    <td><b>District</td>
-    <td>:<?php echo $data["district_name"]?></td>
+    <td></td>
+    <td><?php echo $data["district_name"]?></td>
   </tr>
 </table>
 

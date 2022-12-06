@@ -43,7 +43,7 @@
         <link rel="stylesheet" href="../Template/Admin/css/style.css" />
         <link rel="stylesheet" href="../Template/Admin/css/colors/default.css" id="colorSkinCSS">
     </head>
-    <body class="crm_body_bg" style="background:white">
+    <body class="crm_body_bg" style="background-color:white">
 
 
 
@@ -51,7 +51,7 @@
 
         <!-- sidebar  -->
         <!-- sidebar part here -->
-        <nav class="sidebar">
+        <nav class="sidebar" style="background-color:#4C4C4C">
             <div class="logo d-flex justify-content-between">
                 <a href="HomePage.php"><h2 align="center">Welcome<br><?php echo $_SESSION["shopname"]?></h2></a>
                 <div class="sidebar_close_icon d-lg-none">
