@@ -21,7 +21,7 @@ if(isset($_GET["aid"]))
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'juicepantry608@gmail.com'; // Your gmail
-    $mail->Password = 'piopanbgnhhatgue'; // Your gmail app password
+    $mail->Password = 'xkmaxuzsdxaqiyyc'; // Your gmail app password
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
   

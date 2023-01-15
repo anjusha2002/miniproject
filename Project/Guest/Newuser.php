@@ -37,7 +37,7 @@ include("../Assets/Connection/Connection.php");
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'juicepantry608@gmail.com'; // Your gmail
-    $mail->Password = 'piopanbgnhhatgue'; // Your gmail app password
+    $mail->Password = 'xkmaxuzsdxaqiyyc'; // Your gmail app password
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
   
@@ -48,7 +48,7 @@ include("../Assets/Connection/Connection.php");
     $mail->isHTML(true);
   
     $mail->Subject = "Welcome to Malanad Juice Plantation";
-    $mail->Body = "Hello " .$userName.",thank you for choosing Malanad Juice.Your registration is successfull .Allways gratefull to receive your profile. We always work for the best to provide customers with only the best.Thank you ";
+    $mail->Body = "Hello " .$userName.",thank you for choosing Malanad Juice .Allways gratefull to receive your profile. We always work for the best to provide customers with only the best.Thank you ";
   if($mail->send())
   {
     echo "Sended";
@@ -78,69 +78,100 @@ include("../Assets/Connection/Connection.php");
 	}
    ?>
 
-
-<style>
-tr, td {
-  text-align: left;
-  padding: 9px;
-}
-tr:nth-child(even) {background-color:#A7A7A7;}
-
-</style>
-
-
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Newuser</title>
+<style>
+.button {
+    position: bottom;
+    top:50%;
+   
+    color: #fff;
+    border:none; 
+    border-radius:5px; 
+    padding:10px;
+    min-height:10px; 
+    min-width: 100px;
+	transition: 0.7s;
+  }
+  .button:hover{
+	color:#09AC32;  
+  }
+  
+</style>
 </head>
 
 <body>
 
+
+
+
+
+
+
+
+
+<br /><br /><br />
+<div id="tab" align="center">
 <form action="" method="post" enctype="multipart/form-data" name="form2" id="form2">
-<br /><br /><br /><br />
-<h1 align="center" style="color:#00F">Register as User</h1><br />
-    <p  align="center">Fill the form below.</p>
-    
-    
-    
-    
+<br />
+&nbsp;&nbsp;<h5 align="left">Juice Pantry</h5>
+<h1><b>REGISTRATION</b></h1><br />
+    <p>Please fill in this form to create an account.</p>
   <table width="200" border="0" align="center">
+  
+  
+  
     <tr>
       <td></td>
       <td><label for="txt_name"></label>
-     
-      <input type="text" name="txt_name" id="txt_name" placeholder="*Enter your Name" required/></td>
+      <input type="text" name="txt_name"  id="txt_name" required autocomplete="off" title="Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$" onChange="nameval(this)"placeholder="*Enter your Name"  />
+      <span id="name"></span></td>
     </tr>
+    
+    
+    
+    
     <tr>
-      <td>*Gender</td>
-      <td><input type="radio" name="txt_gender" id="btn_gender" value="male" checked="checked"/> Male
-        <input type="radio" name="txt_gender" id="btn_gender2" value="female" />Female
-        <input type="radio" name="txt_gender" id="btn_gender3" value="others" />Others
-        
-      <label for="btn_gender3"></label><label for="btn_gender2"></label> <label for="btn_gender"></label></td>
+      <td>Gender</td>
+      <td><input type="radio" name="txt_gender" id="btn_gender" value="male" checked="checked"/>
+      Male
+        <input type="radio" name="txt_gender" id="btn_gender2" value="female" />
+      <label for="btn_gender2"></label>        <label for="btn_gender">Female</label></td>
     </tr>
-    <tr>
+    
+   
+    
+   <tr>
       <td></td>
       <td><label for="txt_contact"></label>
-      <input type="text" name="txt_contact" id="txt_contact" reqired pattern="([0-9]{10,10})" placeholder="*1234567890"/></td>
+      <input type="text" name="txt_contact" id="txt_contact" required autocomplete="off"  
+                title="Phone number with 7-9 and remaing 9 digit with 0-9" pattern="[7-9]{1}[0-9]{9}" onChange="checknum(this),CheckContact(this.value)" placeholder="*1234567890"/>
+                <span id="contact"></span><small id="co"></small></td>
     </tr>
+    
+    
+    
     <tr>
       <td></td>
       <td><label for="txt_email"></label>
-      <input type="text" name="txt_email" id="txt_email" placeholder="*E-mail Address" required autocomplete="off" onChange="emailval(this),CheckEmail(this.value)" />
+      <input type="text" name="txt_email" id="txt_email" required autocomplete="off" onChange="emailval(this),CheckEmail(this.value)" placeholder="*Enter your Email"/>
       <span id="content"></span><small id="em"></small></td>
     </tr>
-    
+    <tr>
+      <td></td>
+
+      <td><label for="txt_username"></label>
+      <input type="text" name="txt_username" id="txt_username" required autocomplete="off" title="Username Allows Only Alphabets and numbers,alphabets should be small letters" pattern="^[a-z]+[0-9a-z ]*$" onChange="usernameval(this),CheckUsername(this.value)"placeholder="*Enter your Username"/>
+      <span id="username"></span><small id="us"></small></td>
+    </tr>
     
       <td></td>
-      <td><select name="ddl_district"  id="ddl_district"  onChange="getPlace(this.value)">
+      <td><select name="ddl_district" id="ddl_district" onChange="getPlace(this.value)">
       
-      <option value="">---*select District---</option>
+      <option value="">*Enter District</option>
       <?php
       $selQry="select * from tbl_district";
 	  $row=$conn->query($selQry);
@@ -168,7 +199,7 @@ tr:nth-child(even) {background-color:#A7A7A7;}
       <td><select name="ddl_place" id="ddl_place" >
       
      
-      <option value="">---*select Place---</option>
+      <option value="">*Enter Place</option>
     
             
 	  
@@ -180,20 +211,20 @@ tr:nth-child(even) {background-color:#A7A7A7;}
 
     </tr>
     <tr>
-      <td height="47"></td>
-      <td><input type="file" name="photo" id="photo" required="required" placeholder="*Upload your photo here" /></td>
+      <td height="47">Photo</td>
+      <td><input type="file" name="photo" id="photo" /></td>
     
     </tr>
     
     <tr>
       <td></td>
       <td><label for="txt_password"></label>
-      <input type="password" name="txt_password" placeholder="*Password" id="txt_password" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"   />
+      <input type="password" name="txt_password" id="txt_password" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  placeholder="*Enter Password" />
       <span id="pass"></span></td>
       <tr>
       <td></td>
       <td><label for="txt_password"></label>
-      <input type="password" name="txt_cpassword" placeholder="*Confirm Password" id="txt_cpassword" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  onchange="chkpwd(this,txt_password)" />
+      <input type="password" name="txt_cpassword" id="txt_cpassword" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  onchange="chkpwd(this,txt_password)" placeholder="*Confirm Password"/>
       <span id="pass"></span></td>
       </tr>
     
@@ -201,15 +232,15 @@ tr:nth-child(even) {background-color:#A7A7A7;}
     <tr>
       <td></td>
       <td><label for="txtarea_address"></label>
-      <textarea name="txt_address" id="txt_address" placeholder="Enter address here" cols="45" rows="5" required ></textarea></td>
+      <textarea name="txt_address" id="txt_address" cols="45" rows="5" required placeholder="*Enter Address"></textarea></td>
     </tr>
     <tr>
-      <td colspan="2" align="center" ><input type="submit" name="btn_submit" id="btn_submit" value="submit" />
+      <td colspan="2" align="center"><input type="submit" name="btn_submit" id="btn_submit" value="Create Account" class="button" style="background-color:#008040"  />
       <label for="btn_submit">
-        <input type="reset" name="btn_cancel" id="btn_cancel" value="cancel" />
+        <input type="reset" name="btn_cancel" id="btn_cancel" value="cancel" class="button" style="background-color:#008040"  />
       </label></td>
     </tr>
-     <p align="center"> Already have an account? <a href="Login.php">Sign in</a></p></br>
+    <p> Already have an account? <a href="Login.php">Sign in</a></p>
   </table>
 </form>
 </body>
@@ -235,6 +266,25 @@ function CheckEmail(did)
 		}
 	});
 }
+function CheckContact(did)
+{
+	$.ajax({
+		url:"../Assets/AjaxPages/AjaxCheckContact.php?did="+did,
+		success: function(html){
+			document.getElementById("co").innerHTML=html;
+		}
+	});
+}
+function CheckUsername(did)
+{
+	$.ajax({
+		url:"../Assets/AjaxPages/AjaxCheckUsername.php?did="+did,
+		success: function(html){
+			document.getElementById("us").innerHTML=html;
+		}
+	});
+}
+
 
 function chkpwd(txtrp, txtp)
 {
@@ -305,7 +355,7 @@ function nameval(elem)
 
 
 
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 <?php 
 include("Foot.php");

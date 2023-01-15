@@ -3,6 +3,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
+<style>
+.button {
+    position: top;
+    top:50%;
+   
+    color: #fff;
+    border:none; 
+    border-radius:5px; 
+    padding:10px;
+    min-height:10px; 
+    min-width: 100px;
+	transition: 0.7s;
+  }
+  .button:hover{
+	color:#09AC32;  
+  }
+</style>
 </head>
 
 <body>
@@ -82,8 +99,8 @@ include("Head.php");
       <input type="text" name="txt_con" id="txt_con" required="required" autocomplete="off" /></td>
     </tr>
     <tr>
-      <td colspan="2"><input type="submit" name="btnsave" style="background-color:#04AA6D" id="btnsave" value="Change" />
-      <input type="submit" name="btnc" style="background-color:#04AA6D" id="btnc" value="Cancel" /></td>
+      <td colspan="2"><input type="submit" name="btnsave" style="background-color:#008040" class="button" id="btnsave" value="Change" />
+      <input type="submit" name="btnc" style="background-color:#008040" class="button" id="btnc" value="Cancel" /></td>
     </tr>
   </table>
 </form>

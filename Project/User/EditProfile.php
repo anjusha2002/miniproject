@@ -2,7 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>EditProfileUser</title>
+<title>EditProfile</title>
+<style>
+.button {
+    position: top;
+    top:50%;
+   
+    color: #fff;
+    border:none; 
+    border-radius:5px; 
+    padding:10px;
+    min-height:10px; 
+    min-width: 100px;
+	transition: 0.7s;
+  }
+  .button:hover{
+	color:#09AC32;  
+  }
+</style>
 </head>
 
 <body>
@@ -67,8 +84,8 @@ include("Head.php");
       <td><input type="text" id="txt_address" name="txt_address" value="<?php echo $data["user_address"]?>"/></td>
     </tr>
     <tr>
-      <td colspan="2" align="center"><input type="submit" name="btn_update" style="background-color:#2D9B43" id="btn_update" value="update" /></td>
-      <td><input type="reset" name="btn_cancel" style="background-color:#2D9B43" id="btn_cancel" value="cancel" /></td>
+      <td colspan="2" align="center"><input type="submit" name="btn_update" style="background-color:#008040" class="button" id="btn_update" value="update" /></td>
+      <td><input type="reset" name="btn_cancel" style="background-color:#008040" class="button" id="btn_cancel" value="cancel" /></td>
     </tr>
   </table>
 </form>

@@ -19,7 +19,19 @@ include("../Assets/Connection/connection.php");
                 bottom: 0;
                 right: 0;
                 left: auto;
-            }   
+            }  
+			.pm {
+    position: top;
+    top:50%;
+   
+    background-color:#0EAF0E;
+ border-color: #d6e9c6; 
+    border-radius:5px; 
+    padding:5px 10px;
+    min-height: 10%; 
+   min-width: 20%;
+	transition: 0.7s;
+  } 
 
             .success {
                 color: #3c763d;
@@ -196,7 +208,10 @@ else
                                                 if ($row1["stock_quantity"] > 0 ) {
                                         ?>
                                         <a href="javascript:void(0)" onclick="addCart('<?php echo $row1["product_id"]; ?>')" class="btn btn-success btn-block">Add to Cart</a>
+                                        <button class="btn btn-success btn-block" onclick="window.location.href='Payment.php';">BuyNow</button>  
+                                      
                                         <a href="ViewMore.php?pid=<?php echo $row1["product_id"]?>">ViewMore</a>
+                                        
                                         <?php
                                         } else if ($row1["stock_quantity"] == 0) {
                                         ?>

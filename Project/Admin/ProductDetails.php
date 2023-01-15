@@ -17,10 +17,10 @@ include("../Assets/Connection/Connection.php");
 	 
 	 $productWholesaleprice=$_POST["txt_priceWholesale"];
 	 
-	 $stock=$_POST["txtstock"];
+	
 	 
 	$insQry="insert into tbl_product(product_name,category_id,quantity_id,product_details,product_photo,product_mrp,product_wholesaleprice,product_stock)values
-	 ('".$productName."','".$category."','".$quantity."','".$productDetails."','".$pdtphoto."','".$productMrp."','".$productWholesaleprice."','".$stock."')";
+	 ('".$productName."','".$category."','".$quantity."','".$productDetails."','".$pdtphoto."','".$productMrp."','".$productWholesaleprice."')";
 	 
 	 if($conn->query($insQry))
 	 {
@@ -58,6 +58,23 @@ include("../Assets/Connection/Connection.php");
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>ProductDetails</title>
+<style>
+.button {
+    position: top;
+    top:50%;
+   
+    color: #fff;
+    border:none; 
+    border-radius:5px; 
+    padding:10px;
+    min-height:10px; 
+    min-width: 100px;
+	transition: 0.7s;
+  }
+  .button:hover{
+	color:#09AC32;  
+  }
+</style>
 </head>
 
 <body>
@@ -158,19 +175,14 @@ include("Head.php");
       </td>
     </tr>
     
-    <tr>
-      <td>Opening Stock</td>
-      <td><label for="txtstock"></label>
-      <input type="text" name="txtstock" id="txtstock" />
-      </td>
-    </tr>
+    
 
 
     
     <tr>
-      <td colspan="2" align="center"><input type="submit" name="btn_submit" id="btn_submit" value="submit" />
+      <td colspan="2" align="center"><input type="submit" name="btn_submit" id="btn_submit" value="submit" style="background-color:#008040" class="button" />
       <label for="btn_submit">
-        <input type="reset" name="btn_cancel" id="btn_cancel" value="cancel" />
+        <input type="reset" name="btn_cancel" id="btn_cancel" value="cancel" style="background-color:#008040" class="button" />
       </label></td>
     </tr>
   </table>

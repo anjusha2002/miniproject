@@ -45,7 +45,7 @@ include("../Assets/Connection/Connection.php");
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'juicepantry608@gmail.com'; // Your gmail
-    $mail->Password = 'piopanbgnhhatgue'; // Your gmail app password
+    $mail->Password = 'xkmaxuzsdxaqiyyc'; // Your gmail app password
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
   
@@ -101,38 +101,64 @@ include("../Assets/Connection/Connection.php");
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Newshop</title>
+<style>
+.button {
+    position: bottom;
+    top:50%;
+   
+    color: #fff;
+    border:none; 
+    border-radius:5px; 
+    padding:10px;
+    min-height:10px; 
+    min-width: 100px;
+	transition: 0.7s;
+  }
+  .button:hover{
+	color:#09AC32;  
+  }
+  
+</style>
 </head>
 
 <body>
+
+
+
+
+
+
 <br /><br /><br />
 <div id="tab" align="center">
 <form action="" method="post" enctype="multipart/form-data" name="form2" id="form2">
 <br />
-<h1>Register</h1>
+&nbsp;&nbsp;<h5 align="left">Juice Pantry</h5>
+<h1><b>REGISTRATION</b></h1><br />
     <p>Please fill in this form to create an account.</p>
+
   <table width="200" border="0" align="center">
     <tr>
-      <td>ShopName</td>
+      <td></td>
       <td><label for="txt_name"></label>
      
-      <input type="text" name="txt_name" id="txt_name" required/></td>
+      <input type="text" name="txt_name" id="txt_name" required placeholder="*Enter ShopName"/></td>
     </tr>
    
     <tr>
-      <td>ShopContact</td>
+      <td></td>
       <td><label for="txt_contact"></label>
-      <input type="text" name="txt_contact" id="txt_contact" reqired pattern="([0-9]{10,10})"/></td>
+      <input type="text" name="txt_contact" id="txt_contact" reqired pattern="([0-9]{10,10})"placeholder="*1234567890"/></td>
     </tr>
     <tr>
-      <td>ShopEmail</td>
+      <td></td>
       <td><label for="txt_email"></label>
-      <input type="text" name="txt_email" id="txt_email" required/></td>
+      <input type="text" name="txt_email" id="txt_email" required placeholder="*Enter Email"/></td>
     </tr>
     
-      <td>District</td>
+      <td></td>
       <td><select name="ddl_district" id="ddl_district" onChange="getPlace(this.value)">
       
-      <option value="">---select---</option>
+      <option value="">*Enter District</option>
       <?php
       $selQry="select * from tbl_district";
 	  $row=$conn->query($selQry);
@@ -156,11 +182,11 @@ include("../Assets/Connection/Connection.php");
      
     </tr>
     <tr>
-      <td height="47">Place</td>
+      <td height="47"></td>
       <td><select name="ddl_place" id="ddl_place" >
       
      
-      <option value="">---select---</option>
+      <option value="">*Enter Place</option>
     
             
 	  
@@ -182,26 +208,26 @@ include("../Assets/Connection/Connection.php");
     </tr>
     
     <tr>
-      <td>Password</td>
+      <td></td>
       <td><label for="txt_password"></label>
-      <input type="password" name="txt_password" id="txt_password" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"   />
+      <input type="password" name="txt_password" id="txt_password" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  placeholder="*Enter Password" />
       <span id="pass"></span></td>
       <tr>
-      <td>Confirm Password</td>
+      <td></td>
       <td><label for="txt_password"></label>
-      <input type="password" name="txt_cpassword" id="txt_cpassword" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  onchange="chkpwd(this,txt_password)" />
+      <input type="password" name="txt_cpassword" id="txt_cpassword" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  onchange="chkpwd(this,txt_password)" placeholder="*Confirm Password"/>
       <span id="pass"></span></td>
       </tr>
     
     <tr>
-      <td>Address</td>
+      <td></td>
       <td><label for="txtarea_address"></label>
-      <textarea name="txt_address" id="txt_address" cols="45" rows="5" required></textarea></td>
+      <textarea name="txt_address" id="txt_address" cols="45" rows="5" required placeholder="*Enter  Address"></textarea></td>
     </tr>
     <tr>
-      <td colspan="2" align="center"><input type="submit" name="btn_submit" id="btn_submit" value="submit" />
+      <td colspan="2" align="center"><input type="submit" name="btn_submit" id="btn_submit" value="Create Account" class="button" style="background-color:#008040" />
       <label for="btn_submit">
-        <input type="reset" name="btn_cancel" id="btn_cancel" value="cancel" />
+        <input type="reset" name="btn_cancel" id="btn_cancel" value="cancel" class="button" style="background-color:#008040" />
       </label></td>
     </tr>
      <p> Already have an account? <a href="Login.php">Sign in</a></p>
@@ -288,6 +314,9 @@ function nameval(elem)
 }
 
 </script>
+</html>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 
 

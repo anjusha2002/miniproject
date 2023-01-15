@@ -16,7 +16,7 @@ include("../Assets/Connection/Connection.php");
 <!DOCTYPE html>
 <html lang="en" >
     <head>
-    <a href="HomePage.php">Home</a>
+    
         <meta charset="UTF-8">
         <title>Payment Gateway</title>
         <link rel="stylesheet" href="./style.css">
@@ -173,7 +173,7 @@ include("../Assets/Connection/Connection.php");
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'juicepantry608@gmail.com'; // Your gmail
-    $mail->Password = 'piopanbgnhhatgue'; // Your gmail app password
+    $mail->Password = 'xkmaxuzsdxaqiyyc'; // Your gmail app password
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
   
@@ -183,8 +183,8 @@ include("../Assets/Connection/Connection.php");
   
     $mail->isHTML(true);
   
-    $mail->Subject = "Welcome to Malanad Juice Plantation";
-    $mail->Body = "Hello " .$_SESSION["username"].",Your payment is SUCCESSFULL .Thank you ";
+    $mail->Subject = "Payment Successful..";
+    $mail->Body = "Hello " .$_SESSION["shopname"].",Your Order is confirmed ";
   if($mail->send())
   {
     echo "Sended";
@@ -197,54 +197,44 @@ include("../Assets/Connection/Connection.php");
   //Email Code End
   
 		 
-		 if($_GET["pid"]==null)
-		 {
-					$sel="select * from tbl_cart c inner join tbl_product p on p.product_id=c.product_id where c.booking_id='".$_SESSION["bid"]."'";
-					$row=$conn->query($sel);
-					while($data=$row->fetch_assoc()){
-						$stock=$data["product_stock"];
-						$new=(int)$stock-(int)$data["cart_qty"];
-						$up="update tbl_product set product_stock='".$new."' where product_id='".$data["product_id"]."'";
-						$conn->query($up);
-						$upds="update tbl_cart set cart_status=1 where booking_id='".$_SESSION["bid"]."'";
-						$conn->query($upds);
-						$upb="update tbl_booking set booking_status=2,payment_status=1  where booking_id='".$_SESSION["bid"]."'";
-						$conn->query($upb);	
-						?>
-				<script>
-				window.location="Loader.php";
-				</script>
-                
-				<?php
-					}
-					
-		 }
-		 else
-					{
-						$sel="select * from tbl_cart c inner join tbl_product p on p.product_id=c.product_id where c.cart_id='".$_GET["pid"]."'";
-					$row=$conn->query($sel);
-					while($data=$row->fetch_assoc()){
-						$stock=$data["product_stock"];
-						$new=(int)$stock-(int)$data["cart_qty"];
-						$up="update tbl_product set product_stock='".$new."' where product_id='".$data["product_id"]."'";
-						$conn->query($up);
-						$upds="update tbl_cart set cart_status=1 where cart_id='".$_GET["pid"]."'";
-						$conn->query($upds);
-						$upb="update tbl_booking set booking_status=2,payment_status=1  where booking_id='".$_SESSION["bid"]."'";
-						$conn->query($upb);	
-						?>
-				<script>
-				window.location="Loader.php";
-				</script>
-                
-				<?php
-					}
-						
-					}
-		 
-  }
-				?>
+		$selbook="select * from tbl_booking b inner join tbl_cart c on c.booking_id = b.booking_id inner join tbl_product p on p.product_id=c.product_id where b.booking_id='".$_SESSION["bid"]."'";
+		$row=$conn->query($selbook);
+		while($data=$row->fetch_assoc()){
+			$selprod="select stock_quantity as id from tbl_stock where product_id='".$data["product_id"]."'  ";
+			
+			$row1=$conn->query($selprod);
+		$data1=$row1->fetch_assoc();
+		
+			$new=$data1["id"];
+			$new=$new-$data["cart_qty"];
+			
+			$up="update tbl_stock set stock_quantity='".$new."' where product_id='".$data["product_id"]."' ";
+			$conn->query($up);
+		
+			
+			
+			$a = "update tbl_booking set booking_status='2',payment_status='1' where booking_id='".$_SESSION["bid"]."'";
+				if($conn->query($a))
+				{
+					 $upQrys = "update tbl_cart set cart_status='1' where booking_id='" .$_SESSION["bid"]. "'";
+                	  $conn->query($upQrys);
+					  
 				
+					?>
+		<script>
+		alert('Payment Completed');
+			window.location="Loader.php";
+			</script>
+		<?php
+				}	
+				else
+				{
+					echo "<script>alert('Failed')</script>";
+				}
+			
+		}
+	}
+	?>
 	
    
     <body>

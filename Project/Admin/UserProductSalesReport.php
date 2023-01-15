@@ -42,13 +42,13 @@ include("../Assets/Connection/Connection.php");
       <td width="41">Sl.no</td>
       <td width="46">Name</td>
       <td width="60">Conatct</td>
-      <td width="97">Email</td>
+      <td width="97">Quantity</td>
       <td width="59">Address</td>
      
      
     </tr>
     <?php
-	$sel="select * from tbl_cart c inner join tbl_product p on c.product_id=p.product_id  inner join tbl_booking b on b.user_id=b.booking_id  where cart_status='1' and booking_date between '".$_POST["txt_f"]."' and '".$_POST["txt_t"]."'";
+	$sel="select * from tbl_cart c inner join tbl_product p on c.product_id=p.product_id  inner join tbl_booking b on b.booking_id=c.booking_id inner join tbl_user s on s.user_id=b.user_id  where cart_status='1' and booking_date between '".$_POST["txt_f"]."' and '".$_POST["txt_t"]."'";
 	$row=$conn->query($sel);
 	$i=0;
 	while($data=$row->fetch_assoc())
@@ -59,8 +59,10 @@ include("../Assets/Connection/Connection.php");
       <td><?php echo $i?></td>
       <td><?php echo $data["user_name"];?></td>
       <td><?php echo $data["user_contact"];?></td>
-      <td><?php echo $data["user_email"];?></td>
+      <td><?php echo $data["cart_qty"];?></td>
       <td><?php echo $data["user_address"];?></td>
+      
+
    
           </tr>
           <?php

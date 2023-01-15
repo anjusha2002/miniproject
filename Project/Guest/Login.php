@@ -61,9 +61,29 @@ session_start();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Login</title>
+
+<style>
+.button {
+    position: absolute;
+    top:50%;
+   
+    color: #fff;
+    border:none; 
+    border-radius:5px; 
+    padding:10px;
+    min-height:10px; 
+    min-width: 100px;
+	transition: 0.7s;
+  }
+  .button:hover{
+	color:#09AC32;  
+  }
+</style>
 </head>
 
+
 <body>
+
 <br /><br /><br /><br /><br /><br /><br /><br />
 <form id="form1" name="form1" method="post" action="">
   <table width="200" border="0" align="center">
@@ -73,16 +93,16 @@ session_start();
     </tr>
     <tr>
       <td></td>
-      <td><input type="email" name="txtemail" id="txtemail" placeholder="Enter Email" required /><br/><br/></td>
+      <td><input type="email" name="txtemail" id="txtemail" placeholder="Email.." required /><br/><br/></td>
     </tr>
    <tr>
       <td></td>
-      <td><input type="password" name="txtpassword" id="txtpassword"required  margin-left:-30px;cursor:pointer; pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Enter Password"/><br/><br/></td>
+      <td><input type="password" name="txtpassword" id="txtpassword"required  margin-left:-30px;cursor:pointer; pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Password.."/><br/><br/></td>
       
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><input type="submit" name="btnLogin" id="btnLogin" value="Login" style="background-color:#04AA6D"/></td>
+      <td><input type="submit" name="btnLogin" id="btnLogin" value="Login" style="background-color:#008040" class="button" /></td>
     </tr>
     <tr>
      <td>&nbsp;</td>

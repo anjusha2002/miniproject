@@ -24,7 +24,7 @@ if(isset($_GET["rid"]))
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'juicepantry608@gmail.com'; // Your gmail
-    $mail->Password = 'piopanbgnhhatgue'; // Your gmail app password
+    $mail->Password = 'xkmaxuzsdxaqiyyc'; // Your gmail app password
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
   
@@ -35,7 +35,7 @@ if(isset($_GET["rid"]))
     $mail->isHTML(true);
   
     $mail->Subject = "Welcome to Malanad Juice Plantation";
-    $mail->Body = "Hello " .$_GET["name"].",thank you for choosing Malanad Juice.Your fejistration is  rejected.Thank you ";
+    $mail->Body = "Hello " .$_GET["name"].",thank you for choosing Malanad Juice.Your rejistration is  rejected.Thank you ";
   if($mail->send())
   {
     echo "Sended";

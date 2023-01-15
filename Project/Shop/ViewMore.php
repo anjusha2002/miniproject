@@ -28,7 +28,7 @@ include("Head.php");
 ?>
 
 <form id="form1" name="form1" method="post" action="">
-  <table width="200" border="1" align="center">
+  <table width="300" border="1" align="center" >
     <tr>
       <td>ProductName</td>
       <td><?php echo $data["product_name"]?></td>

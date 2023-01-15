@@ -22,6 +22,7 @@
 <body>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container bootstrap snippets bootdeys">
+<div id="pri">
 <div class="row">
   <div class="col-sm-12">
 	  	<div class="panel panel-default invoice" id="invoice">
@@ -77,8 +78,10 @@
 			      </thead>
 			      <tbody>
 					<?php
+					$i=0;
 					$tot=0;
-					$selb="select * from tbl_cart c inner join tbl_booking b on b.booking_id=c.booking_id inner join tbl_product pon p.product_id=c.product_id where b.booking_id='".$_SESSION["bid"]."'";
+					$selb="select * from tbl_cart c inner join tbl_booking b on b.booking_id=c.booking_id inner join tbl_product p on p.product_id=c.product_id where b.booking_id='".$_SESSION["bid"]."'";
+					//echo $selb;
 					$rows=$conn->query($selb);
 					while($dats=$rows->fetch_assoc())
 					{
@@ -104,18 +107,17 @@
 			<div class="col-xs-6 margintop">
 				<p class="lead marginbottom">THANK YOU!</p>
 
-				<button class="btn btn-success" id="invoice-print"><i class="fa fa-print"></i> Print Invoice</button>
-			
 			</div>
 			<div class="col-xs-6 text-right pull-right invoice-total">
 					  
 			          <p>Total :<?php echo $tot ?></p>
 			</div>
 			</div>
-
+<center><input type="button" onclick="printDiv('pri')" id="invoice-print"  class="btn btn-success" value="Print" /></center>
 		  </div>
 		</div>
 	</div>
+</div>
 </div>
 </div>
 
@@ -234,7 +236,16 @@ background:#eee;
 </style>
 
 <script type="text/javascript">
+function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
 
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
 </script>
 </body>
 </html>

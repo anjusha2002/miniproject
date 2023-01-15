@@ -68,6 +68,23 @@ alert("Failed to register complaint");
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>PostComplaintShop</title>
+<style>
+.button {
+    position: top;
+    top:50%;
+   
+    color: #fff;
+    border:none; 
+    border-radius:5px; 
+    padding:10px;
+    min-height:10px; 
+    min-width: 100px;
+	transition: 0.7s;
+  }
+  .button:hover{
+	color:#09AC32;  
+  }
+</style>
 </head>
 
 <body>
@@ -89,8 +106,8 @@ include("Head.php");
       <td><textarea name="txt_comp" id="txt_comp" cols="45" rows="5"></textarea></td>
     </tr>
     <tr>
-      <td colspan="2"><input type="submit" name="btn_submit" style="background-color:#04AA6D" id="btn_submit" value="Submit" />
-      <input type="reset" name="btn_cancel" style="background-color:#04AA6D" id="btn_cancel" value="Cancel" /></td>
+      <td colspan="2"><input type="submit" name="btn_submit" style="background-color:#008040" class="button" id="btn_submit" value="Submit" />
+      <input type="reset" name="btn_cancel" style="background-color:#008040" class="button" id="btn_cancel" value="Cancel" /></td>
     </tr>
   </table>
   </center>

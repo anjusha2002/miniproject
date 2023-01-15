@@ -8,6 +8,16 @@ session_start();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>ShopHomePageShop</title>
+<style>
+.center{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	width=50%;
+	border-radius:8px;
+	
+}
+</style>
 </head>
 
 
@@ -17,11 +27,15 @@ include("Head.php");
 ?>
 
 <body>
+<h2 align="center">
+WELCOME TO MALANAD
+</h2>
 
 
 
 
-<img src="shop.jpg" width="100%" height="100%">
+<img src="pf.jpg"  width="40%" height="40%" class="center" >
+
 
 
 

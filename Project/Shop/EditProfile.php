@@ -3,6 +3,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>EditProfileShop</title>
+<style>
+.button {
+    position: top;
+    top:50%;
+   
+    color: #fff;
+    border:none; 
+    border-radius:5px; 
+    padding:10px;
+    min-height:10px; 
+    min-width: 100px;
+	transition: 0.7s;
+  }
+  .button:hover{
+	color:#09AC32;  
+  }
+</style>
 </head>
 
 <body>
@@ -64,8 +81,8 @@ include("Head.php");
       <td><input type="text" id="txt_address" name="txt_address" value="<?php echo $data["shop_address"]?>"/></td>
     </tr>
     <tr>
-      <td colspan="2" align="center"><input type="submit" style="background-color:#04AA6D" name="btn_update" id="btn_update" value="update" /></td>
-      <td><input type="reset" name="btn_cancel" style="background-color:#04AA6D" id="btn_cancel" value="cancel" /></td>
+      <td colspan="2" align="center"><input type="submit" style="background-color:#008040" class="button" name="btn_update" id="btn_update" value="update" /></td>
+      <td><input type="reset" name="btn_cancel" style="background-color:#008040" class="button" id="btn_cancel" value="cancel" /></td>
     </tr>
   </table>
 </form>

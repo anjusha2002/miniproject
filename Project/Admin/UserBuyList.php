@@ -35,7 +35,7 @@ include("Head.php");
       <td><img src="../Assets/Files/ProductPhoto/<?php echo $data["product_photo"]?>"  width="150" height="150"/></td>
       <td><?php echo $data["cart_qty"]?></td>
       <td><?php 
-	  if($data["booking_status"]==1)
+	  if($data["payment_status"]==1)
 	  {
 		  echo "Payment Completed";?>
           <?php

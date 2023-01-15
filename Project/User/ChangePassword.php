@@ -3,6 +3,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>ChangePasswordUser</title>
+<style>
+.button {
+    position: top;
+    top:50%;
+   
+    color: #fff;
+    border:none; 
+    border-radius:5px; 
+    padding:10px;
+    min-height:10px; 
+    min-width: 100px;
+	transition: 0.7s;
+  }
+  .button:hover{
+	color:#09AC32;  
+  }
+</style>
 </head>
 
 <body>
@@ -68,21 +85,21 @@ include("Head.php");
     <tr>
       <td>Current Password</td>
       <td><label for="txt_cur"></label>
-      <input type="text" name="txt_cur" id="txt_cur" required="required" autocomplete="off" /></td>
+      <input type="password" name="txt_cur" id="txt_cur" required="required" autocomplete="off" /></td>
     </tr>
     <tr>
       <td>New Password</td>
       <td><label for="txt_new"></label>
-      <input type="text" name="txt_new" id="txt_new" required="required" autocomplete="off" /></td>
+      <input type="password" name="txt_new" id="txt_new" required="required" autocomplete="off" /></td>
     </tr>
     <tr>
       <td>Confirm Password</td>
       <td><label for="txt_con"></label>
-      <input type="text" name="txt_con" id="txt_con" required="required" autocomplete="off" /></td>
+      <input type="password" name="txt_con" id="txt_con" required="required" autocomplete="off" /></td>
     </tr>
     <tr>
-      <td colspan="2"><input type="submit" name="btnsave" style="background-color:#2D9B43" id="btnsave" value="Change" />
-      <input type="submit" name="btnc" id="btnc" style="background-color:#2D9B43" value="Cancel" /></td>
+      <td colspan="2"><input type="submit" name="btnsave" style="background-color:#008040" class="button" id="btnsave" value="Change"  />
+      <input type="submit" name="btnc" id="btnc" style="background-color:#008040" class="button" value="Cancel" /></td>
     </tr>
   </table>
 </form>

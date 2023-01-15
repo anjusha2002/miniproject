@@ -196,6 +196,7 @@ else
                                                 if ($row1["stock_quantity"] > 0 ) {
                                         ?>
                                         <a href="javascript:void(0)" onclick="addCart('<?php echo $row1["product_id"]; ?>')" class="btn btn-success btn-block">Add to Cart</a>
+                                        <button class="btn btn-success btn-block" onclick="window.location.href='Payment.php';">BuyNow</button> 
                                         <a href="ViewMore.php?pid=<?php echo $row1["product_id"]?>">ViewMore</a>
                                         <?php
                                         } else if ($row1["stock_quantity"] == 0) {
@@ -233,7 +234,7 @@ else
             function addCart(id)
             {
                 $.ajax({
-                    url: "../Assets/AjaxPages/AjaxAddCart.php?id=" + id,
+                    url: "../Assets/AjaxPages/AjaxAddCartShop.php?id=" + id,
                     success: function(response) {
                         if (response.trim() === "Added to Cart")
                         {

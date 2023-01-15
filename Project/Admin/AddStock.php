@@ -68,13 +68,30 @@ if(isset($_GET["did"]))
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>AddStock</title>
+<style>
+.button {
+    position: top;
+    top:50%;
+   
+    color: #fff;
+    border:none; 
+    border-radius:5px; 
+    padding:10px;
+    min-height:10px; 
+    min-width: 100px;
+	transition: 0.7s;
+  }
+  .button:hover{
+	color:#09AC32;  
+  }
+</style>
 </head>
 
 <body>
 <a href="HomePage.php">Home</a>
 <form id="form1" name="form1" method="post" action="">
 
-<table width="200" border="1" align="center">
+<table width="200" border="0" align="center">
   
     <td>Stock</td>
     <td><label for="txt_stock"></label>
@@ -91,8 +108,8 @@ if(isset($_GET["did"]))
       <input type="date" name="txt_expdate" id="txt_date" /></td>
   </tr>
   <tr>
-    <td colspan="2"><input type="submit" name="btn_submit" id="btn_submit" value="Submit" />
-      <input type="submit" name="btn_cancel" id="btn_cancel" value="Cancel" /></td>
+    <td colspan="2"><input type="submit" name="btn_submit" id="btn_submit" value="Submit" style="background-color:#008040" class="button" />
+      <input type="submit" name="btn_cancel" id="btn_cancel" value="Cancel" style="background-color:#008040" class="button" /></td>
     </tr>
 </table> 
 </form>

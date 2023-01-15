@@ -9,7 +9,17 @@ session_start();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>UserHomePageUser</title>
+<title>UserHomePage</title>
+<style>
+.center{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	width=50%;
+	border-radius:8px;
+	
+}
+</style>
 </head>
 
 
@@ -21,10 +31,13 @@ include("Head.php");
 
 <body>
 
+<h2 align="center">
+WELCOME TO MALANAD
+</h2>
+<img src="pf.jpg"  width="40%" height="40%" class="center" >
 
 
 
-<img src="image-1.jpeg" width="100%" height="100%">
 
 
 

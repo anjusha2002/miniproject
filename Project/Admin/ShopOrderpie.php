@@ -59,7 +59,7 @@ var barColors = [
 ];
 
 new Chart("myChart", {
-  type: "pie",
+  type: "bar",
   data: {
     labels: xValues,
     datasets: [{

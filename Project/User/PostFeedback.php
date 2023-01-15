@@ -38,6 +38,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>User Feedback</title>
+<style>
+.button {
+    position: top;
+    top:50%;
+   
+    color: #fff;
+    border:none; 
+    border-radius:5px; 
+    padding:10px;
+    min-height:10px; 
+    min-width: 100px;
+	transition: 0.7s;
+  }
+  .button:hover{
+	color:#09AC32;  
+  }
+</style>s
 </head>
 
 <body>
@@ -49,14 +66,14 @@ include("Head.php");
 
 <form id="form1" name="form1" method="post" action="">
 <center>
-  <table width="200" border="1">
+  <table width="200" border="0">
     <tr>
       <td>Feedback</td>
       <td><textarea name="txt_feedbackdetails" id="txt_feedbackdetails" cols="45" rows="5"></textarea></td>
-    </tr>
+    </tr><br />
     <tr>
-      <td colspan="2" align="center"><input type="submit" name="btn_submit" id="btn_submit" value="Send" />
-        <input type="submit" name="btn_cancel" id="btn_cancel" value="Cancel" /></td>
+      <td colspan="2" align="center"><input type="submit" name="btn_submit" id="btn_submit" value="Send" style="background-color:#008040" class="button" />
+        <input type="submit" name="btn_cancel" id="btn_cancel" value="Cancel" style="background-color:#008040" class="button" /></td>
       </tr>
   </table>
   </center>

@@ -44,12 +44,12 @@ include("Head.php");
 	  }
 	  else if($data["booking_status"]==1 && $data["cart_status"]==0)
 	  {
-		  echo "Booking Completed And payment Is Remaining";?> |<a href="Payment.php?pid=<?php echo $data["cart_id"]?>">Pay Now</a>
+		  echo "Booking Completed And payment Is Remaining";?> |<a href="Payment.php?pid=<?php echo $data["product_id"]?>">Pay Now</a>
           <?php
 	  }
-	  else if($data["booking_status"]==1)
+	 else if($data["booking_status"]==1)
 	  {
-		  echo "Exited Before Payment";?>| <a href="ProductRating.php?lid=<?php echo $data["product_id"]?>">Rate Now</a>
+		  echo "Exited Before Payment";?>|<a href="Payment.php?pid=<?php echo $data["product_id"]?>">Pay Now</a> 
          <?php
 	  }
 	  else

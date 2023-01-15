@@ -76,6 +76,23 @@ include("../Assets/Connection/Connection.php");
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Place</title>
+<style>
+.button {
+    position: top;
+    top:50%;
+   
+    color: #fff;
+    border:none; 
+    border-radius:5px; 
+    padding:10px;
+    min-height:10px; 
+    min-width: 100px;
+	transition: 0.7s;
+  }
+  .button:hover{
+	color:#09AC32;  
+  }
+</style>
 </head>
 
 <body>
@@ -121,7 +138,7 @@ include("Head.php");
       <input type="text" name="txt_pincode" id="txt_pincode" required/></td>
     </tr>
     <tr>
-      <td colspan="2"><input type="submit" name="btn_submit" id="btn_submit" value="Submit" /></td>
+      <td colspan="2"><input type="submit" name="btn_submit" id="btn_submit" value="Submit" style="background-color:#008040" class="button" /></td>
     </tr>
   </table>
   
